@@ -1,33 +1,19 @@
 import React from 'react';
 import MuiModal from '@material-ui/core/Modal';
+import MuiBackdrop from '@material-ui/core/Backdrop';
 
-const modalStyles = {
-  backgroundColor: 'white',
-  borderRadius: '10px',
-  margin: '25vh auto 0',
-  outline: 'none',
-  padding: '30px',
-  textAlign: 'center',
-  width: '200px',
-};
+import ModalContent from './ModalContent';
 
-const Modal = ({ handleClose, open }) => {
-  const body = (
-    <div style={modalStyles}>
-      <p id="simple-modal-description">modal content</p>
-      <Modal />
-    </div>
-  );
-
-  return (
-    <MuiModal
-      aria-describedby="simple-modal-description"
-      onClose={handleClose}
-      open={open}
-    >
-      {body}
-    </MuiModal>
-  );
-};
+const Modal = ({ handleClose, open }) => (
+  <MuiModal
+    aria-describedby="simple-modal-description"
+    aria-labelledby="simple-modal-title"
+    BackdropComponent={MuiBackdrop}
+    onClose={handleClose}
+    open={open}
+  >
+    <ModalContent />
+  </MuiModal>
+);
 
 export default Modal;

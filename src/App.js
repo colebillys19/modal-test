@@ -1,9 +1,9 @@
-import React, { Fragment, useState } from 'react';
+import React, { useState } from 'react';
 
 import Modal from './Modal';
 
 const App = () => {
-  const [open, setOpen] = useState(false);
+  const [open, setOpen] = useState(true);
 
   const handleOpen = () => {
     setOpen(true);
@@ -14,10 +14,12 @@ const App = () => {
   };
 
   return (
-    <Fragment>
-      <button onClick={handleOpen} style={{ margin: '20px' }}>click me</button>
+    <div>
+      <button type="button" onClick={handleOpen}>
+        click me
+      </button>
       <Modal handleClose={handleClose} open={open} />
-    </Fragment>
+    </div>
   );
 };
 
